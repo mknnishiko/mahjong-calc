@@ -1,0 +1,43 @@
+{% extends 'calc/base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+
+        <div class="container-md my-4">
+            <div>
+                <a><button type="button" class="mx-auto btn btn-primary">対局開始</button></a>
+            </div>
+        </div>
+
+        <div class="container-md my-4">
+            <div class="row">
+                <div class="col-auto me-auto">
+                    <h3>ランキング</h3>
+                </div>
+                <div class="col-auto">
+                    <a>プレイヤー新規登録</a>
+                </div>
+            </div>
+    
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">rank</th>
+                        <th scope="col">point</th>
+                        <th scope="col">name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in player_list %}
+                    <tr>
+                        <th></th>
+                        <td>{{ player.points }}</td>
+                        <td>{{ player.name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}
